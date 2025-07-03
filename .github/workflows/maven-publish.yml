@@ -6,7 +6,6 @@ on:
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
 
     steps:
@@ -16,10 +15,9 @@ jobs:
       with:
         java-version: '17'
         distribution: 'adopt'
-    - name: Build and test with Maven
-      run: mvn -B package --file pom.xml
+    - name: Build and run unit tests with Maven
+      run: mvn clean verify
       working-directory: GitHubActions
-
 
   sayHello:
     runs-on: ubuntu-latest
